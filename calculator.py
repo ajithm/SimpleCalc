@@ -16,3 +16,14 @@ def divide(a, b):
     if b == 0:
         raise ValueError("Cannot divide by zero.")
     return a / b
+
+def multiCalc(a, b, operation):
+    operations = {
+        'add': add,
+        'subtract': subtract,
+        'multiply': multiply,
+        'divide': divide
+    }
+    if operation not in operations:
+        raise ValueError(f"Unknown operation: {operation}")
+    return operations[operation](a, b)
